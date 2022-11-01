@@ -1,3 +1,9 @@
+import { nextTick } from 'process';
+import { $, $$, browser, by, ExpectedConditions } from 'protractor';
+import { fromEvent } from 'rxjs';
+import { debounceTime} from 'rxjs/operators';
+import * as request from 'request'; 
+var request = require('request');
 describe('When: Use the search feature', () => {
   beforeEach(() => {
     cy.startAt('/');
@@ -11,7 +17,12 @@ describe('When: Use the search feature', () => {
     cy.get('[data-testing="book-item"]').should('have.length.greaterThan', 1);
   });
 
-  xit('Then: I should see search results as I am typing', () => {
+  it('Then: I should see search results as I am typing', async () => {
     // TODO: Implement this test!
+  //   const input = await $('input[type="search"]');
+  //   await input.sendKeys('java');
+  //   debounceTime(500);
+  //  const items = await $$('[data-testing="book-item"]');
+  //  expect(items.length).greaterThan(1);
   });
 });

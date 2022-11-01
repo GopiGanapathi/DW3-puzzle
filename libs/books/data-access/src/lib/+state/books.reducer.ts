@@ -24,7 +24,8 @@ export const initialState: State = booksAdapter.getInitialState({
 
 const booksReducer = createReducer(
   initialState,
-  on(BooksActions.searchBooks, (state, { term }) => ({
+  on(BooksActions.searchBooks, (state, { term }) => 
+  ({
     ...state,
     searchTerm: term,
     loaded: false,

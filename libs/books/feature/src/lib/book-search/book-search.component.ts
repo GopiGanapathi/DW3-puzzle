@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
   addToReadingList,
@@ -17,8 +17,11 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./book-search.component.scss']
 })
 export class BookSearchComponent implements OnInit,OnDestroy {
+  
   books: ReadingListBook[];
   subscription:Subscription;
+  intervalId:any;
+
 
   searchForm = this.fb.group({
     term: ''
@@ -53,7 +56,7 @@ export class BookSearchComponent implements OnInit,OnDestroy {
     this.searchForm.controls.term.setValue('javascript');
     this.searchBooks();
   }
-
+  
   searchBooks() {
     if (this.searchForm.value.term) {
       this.store.dispatch(searchBooks({ term: this.searchTerm }));
@@ -65,3 +68,4 @@ export class BookSearchComponent implements OnInit,OnDestroy {
     this.subscription.unsubscribe();
   }
 }
+
