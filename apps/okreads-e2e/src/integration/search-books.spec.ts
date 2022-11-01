@@ -19,10 +19,6 @@ describe('When: Use the search feature', () => {
 
   it('Then: I should see search results as I am typing', async () => {
     // TODO: Implement this test!
-  //   const input = await $('input[type="search"]');
-  //   await input.sendKeys('java');
-  //   debounceTime(500);
-  //  const items = await $$('[data-testing="book-item"]');
-  //  expect(items.length).greaterThan(1);
+ 
   });
 });
