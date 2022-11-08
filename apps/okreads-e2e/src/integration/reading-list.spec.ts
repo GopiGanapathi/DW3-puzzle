@@ -1,3 +1,4 @@
+
 describe('When: I use the reading list feature', () => {
   beforeEach(() => {
     cy.startAt('/');
@@ -10,5 +11,9 @@ describe('When: I use the reading list feature', () => {
       'contain.text',
       'My Reading List'
     );
+  });
+  it('Undo: I should undo remove from reading list', async () => {
+    cy.get('/reading-list/')
+
   });
 });
